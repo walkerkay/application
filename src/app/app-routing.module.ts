@@ -3,9 +3,18 @@ import { Routes, RouterModule } from '@angular/router';
 import { LoginComponent } from './login/login.component';
 import { MessageComponent, MessageChatComponent } from './message';
 import { ProjectComponent } from './project';
-import { ProjectResolver } from './project/project-resolver';
+import { ProjectResolver } from './project/services/project-resolver';
+import { AppRootResolver } from './services/app-root-resolver';
 
 const routes: Routes = [
+  {
+    path: '',
+    redirectTo: '/project',
+    pathMatch: 'full',
+    resolve: {
+      data: AppRootResolver
+    }
+  },
   {
     path: 'login',
     component: LoginComponent

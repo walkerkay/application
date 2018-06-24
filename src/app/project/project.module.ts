@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { AppSharedModule } from '../app-shared.module';
 import { ProjectTocComponent, ProjectComponent, ProjectService } from '.';
-import { ProjectResolver } from './project-resolver';
+import { ProjectResolver } from './services/project-resolver';
 
 @NgModule({
     imports: [

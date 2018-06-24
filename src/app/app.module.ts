@@ -6,6 +6,7 @@ import { COMPONENTS, ENTRY_COMPONENTS, PIPES, PROVIDERS } from './components';
 import { AppSharedModule } from './app-shared.module';
 import { MessageModule } from './message/message.module';
 import { ProjectModule } from './project/project.module';
+import { appServices } from './services';
 
 @NgModule({
   imports: [
@@ -28,6 +29,7 @@ import { ProjectModule } from './project/project.module';
     ProjectModule
   ],
   providers: [
+    ...appServices,
     ...PROVIDERS
   ],
   bootstrap: [AppComponent]

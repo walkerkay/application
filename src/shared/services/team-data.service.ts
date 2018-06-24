@@ -11,6 +11,6 @@ export class TeamDataService {
     }
 
     teamResolve(): Observable<any> {
-        return this.http.get('/api/team');
+        return this.http.get('/assets/api/team/team.json');
     }
 }
