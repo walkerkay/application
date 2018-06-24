@@ -1,0 +1,10 @@
+<nz-layout>
+  <nz-sider [nzWidth]="300" [nzBreakpoint]="'lg'" style="background:#fff">
+    <app-message-toc></app-message-toc>
+  </nz-sider>
+  <nz-layout style="padding:0 24px 24px">
+    <nz-content style="background:#fff; margin: 20px 0; padding: 24px; height:500px;">
+      <router-outlet></router-outlet>
+    </nz-content>
+  </nz-layout>
+</nz-layout>

@@ -1,18 +1,35 @@
-import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-
-import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { LoginComponent } from './login/login.component';
+import { AppNavComponent } from './components/app-nav/app-nav.component';
+import { COMPONENTS, ENTRY_COMPONENTS, PIPES, PROVIDERS } from './components';
+import { AppSharedModule } from './app-shared.module';
+import { MessageModule } from './message/message.module';
+import { ProjectModule } from './project/project.module';
 
 @NgModule({
-  declarations: [
-    AppComponent
-  ],
   imports: [
-    BrowserModule,
-    AppRoutingModule
+    AppSharedModule,
+    MessageModule,
+    ProjectModule
   ],
-  providers: [],
+  declarations: [
+    AppComponent,
+    LoginComponent,
+    AppNavComponent,
+    ...COMPONENTS
+  ],
+  entryComponents: [
+    ...ENTRY_COMPONENTS
+  ],
+  exports: [
+    AppSharedModule,
+    MessageModule,
+    ProjectModule
+  ],
+  providers: [
+    ...PROVIDERS
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
