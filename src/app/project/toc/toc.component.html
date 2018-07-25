@@ -1,6 +1,6 @@
 <ul nz-menu [nzMode]="'inline'" style="height:100%">
     <li nz-menu-item *ngFor="let project of (projectService.projects$ | async)"
-    [routerLink]="['/project',project.id]">
+    [routerLink]="['/project',project.id]" [routerLinkActive]="'ant-menu-item-selected'">
         <span title>
             <i class="anticon anticon-user"></i>{{project.name}}</span>
     </li>
