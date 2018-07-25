@@ -1,0 +1,17 @@
+{
+    "code": 200,
+    "data": {
+        "addons": [
+            {
+                "id": 1,
+                "key": "waiting",
+                "name": "待办事项"
+            },
+            {
+                "id": 2,
+                "key": "iteration",
+                "name": "当前迭代"
+            }
+        ]
+    }
+}

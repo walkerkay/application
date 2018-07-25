@@ -2,7 +2,7 @@ import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { LoginComponent } from './login/login.component';
 import { MessageComponent, MessageChatComponent } from './message';
-import { ProjectComponent } from './project';
+import { ProjectComponent, ProjectDetailComponent, ProjectAddonComponent } from './project';
 import { ProjectResolver } from './project/services/project-resolver';
 import { AppRootResolver } from './services/app-root-resolver';
 
@@ -34,7 +34,19 @@ const routes: Routes = [
     component: ProjectComponent,
     resolve: {
       data: ProjectResolver
-    }
+    },
+    children: [
+      {
+        path: ':pid',
+        component: ProjectDetailComponent,
+        children: [
+          {
+              path: '',
+              component: ProjectAddonComponent
+          },
+        ]
+      }
+    ]
   },
 ];
 

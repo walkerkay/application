@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { AppSharedModule } from '../app-shared.module';
-import { ProjectTocComponent, ProjectComponent, ProjectService } from '.';
+import { COMPONENTS, ENTITY_COMPONENTS, PROVIDERS } from '.';
 import { ProjectResolver } from './services/project-resolver';
 
 @NgModule({
@@ -8,17 +8,16 @@ import { ProjectResolver } from './services/project-resolver';
         AppSharedModule
     ],
     declarations: [
-        ProjectComponent,
-        ProjectTocComponent
+        ...COMPONENTS
     ],
     entryComponents: [
+        ...ENTITY_COMPONENTS
     ],
     exports: [
-        ProjectComponent,
-        ProjectTocComponent
+        ...COMPONENTS
     ],
     providers: [
-        ProjectService,
+        ...PROVIDERS,
         ProjectResolver
     ]
 })
