@@ -1,11 +1,12 @@
 
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { Observable, Subject, of } from 'rxjs';
+import { Observable, Subject, of, BehaviorSubject } from 'rxjs';
 import { ProjectInfo } from '../entity/project-info';
 import { tap, map } from 'rxjs/operators';
 import { ResponseData } from '../../../shared/entity/response-data';
 import { ProjectAddonInfo } from '../entity/project-addon-info';
+import { TaskInfo } from '../entity/task-info';
 
 @Injectable()
 export class ProjectService {
@@ -15,6 +16,8 @@ export class ProjectService {
     public addons$ = new Observable<ProjectAddonInfo[]>();
 
     public selectedAddon = new Subject<ProjectAddonInfo>();
+
+    public tasks$ = new BehaviorSubject<TaskInfo[]>([]);
 
     constructor(private http: HttpClient) {
 
@@ -38,6 +41,23 @@ export class ProjectService {
                 return addons;
             })
         );
+    }
+
+    getProjectTasks(): Observable<TaskInfo[]> {
+        return this.http.get<TaskInfo>('/assets/api/project/tasks.json').pipe(
+            map((response: ResponseData) => {
+                const tasks = response.data.tasks;
+                this.tasks$.next(tasks);
+                return tasks;
+            })
+        );
+    }
+
+    addProjectTask(name: string) {
+        this.tasks$.next([
+            ...this.tasks$.getValue(),
+            { name: name }
+        ]);
     }
 
 

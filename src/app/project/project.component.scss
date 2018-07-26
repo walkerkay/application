@@ -1,0 +1,8 @@
+.ant-list-item {
+  padding-left: 10px;
+  padding-right: 10px;
+  cursor: pointer;
+  &:hover {
+    box-shadow: 0 0 8px 2px #eee;
+  }
+}

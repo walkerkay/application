@@ -11,6 +11,7 @@ import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 import { SHARED_SERVICES } from './services';
 import { httpInterceptorProviders } from '../core/interceptor/\bindex';
 import { CORE_SERVICES } from '../core';
+import { ModalModule } from 'ngx-bootstrap';
 
 
 export function createTranslateLoader(http: HttpClient) {
@@ -29,6 +30,7 @@ registerLocaleData(zh);
     HttpClientModule,
     NgZorroAntdModule,
     ReactiveFormsModule,
+    ModalModule.forRoot(),
     TranslateModule.forRoot({
       loader: {
         provide: TranslateLoader,
@@ -44,8 +46,8 @@ registerLocaleData(zh);
     HttpClientModule,
     NgZorroAntdModule,
     ReactiveFormsModule,
-    NgZorroAntdModule,
-    TranslateModule
+    TranslateModule,
+    ModalModule
   ],
   providers: [
     { provide: NZ_I18N, useValue: zh_CN },
