@@ -6,13 +6,16 @@ import { ProjectAddonComponent } from './detail/project-addon.component';
 import { ProjectAddonWaitingComponent, ProjectAddonIterationComponent } from './addon';
 import { ProjectTaskDetailComponent } from './task/detail/task-detail.component';
 import { TaskService } from './services/task.service';
+import { ProjectTaskDesignerComponent } from './configuration/designer/designer.component';
+import { TaskDesignerService } from './configuration/designer/designer.services';
 
 export {
     ProjectComponent,
     ProjectTocComponent,
     ProjectDetailComponent,
     ProjectAddonComponent,
-    ProjectTaskDetailComponent
+    ProjectTaskDetailComponent,
+    ProjectTaskDesignerComponent
 };
 
 
@@ -23,7 +26,8 @@ export const COMPONENTS = [
     ProjectAddonWaitingComponent,
     ProjectAddonIterationComponent,
     ProjectAddonComponent,
-    ProjectTaskDetailComponent
+    ProjectTaskDetailComponent,
+    ProjectTaskDesignerComponent
 ];
 
 
@@ -35,5 +39,6 @@ export const ENTITY_COMPONENTS = [
 
 export const PROVIDERS = [
     ProjectService,
-    TaskService
+    TaskService,
+    TaskDesignerService
 ];

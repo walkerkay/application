@@ -1,0 +1,36 @@
+<div class="task-designer-body">
+    <div class="task-designer-fields">
+        <div class="field-title">可选控件</div>
+        <ul class="field-list" [sortablejs]="fields" [sortablejsOptions]="fieldSortOptions" [sortablejsCloneFunction]="cloneFieldItem">
+            <li class=field-item *ngFor="let item of fields;">{{item.name}}</li>
+        </ul>
+    </div>
+    <div class="task-designer-properties">
+        <div class="property-title">可选控件</div>
+        <div class="property-body" [sortablejs]="properties" [sortablejsOptions]="propertySortOptions">
+            <div class="property-item" *ngFor="let item of properties;">
+                <div class="property-item-title">{{item.name}}</div>
+                <div class="property-item-control">
+                    <input *ngIf="item.type === 1" nz-input placeholder="" />
+                    <textarea *ngIf="item.type === 2" row="3" nz-input placeholder="">
+                        </textarea>
+                    <nz-date-picker *ngIf="item.type === 3" style="width: 100%;" [(ngModel)]="date" nzShowTime></nz-date-picker>
+                    <nz-select *ngIf="item.type === 4" style="width: 100%;" [(ngModel)]="selectedValue" nzPlaceHolder="下拉选择">
+                        <nz-option nzValue="jack" nzLabel="Jack"></nz-option>
+                        <nz-option nzValue="lucy" nzLabel="Lucy"></nz-option>
+                        <nz-option nzValue="disabled" nzLabel="Disabled" nzDisabled></nz-option>
+                    </nz-select>
+
+                    <nz-radio-group *ngIf="item.type === 5" [(ngModel)]="radioValue">
+                        <label nz-radio nzValue="A">A</label>
+                        <label nz-radio nzValue="B">B</label>
+                        <label nz-radio nzValue="C">C</label>
+                        <label nz-radio nzValue="D">D</label>
+                    </nz-radio-group>
+
+                    <nz-avatar *ngIf="item.type === 6" nzIcon="anticon anticon-user"></nz-avatar>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

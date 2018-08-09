@@ -12,7 +12,7 @@ import { SHARED_SERVICES } from './services';
 import { httpInterceptorProviders } from '../core/interceptor/\bindex';
 import { CORE_SERVICES } from '../core';
 import { ModalModule } from 'ngx-bootstrap';
-
+import { SortablejsModule } from 'angular-sortablejs/dist';
 
 export function createTranslateLoader(http: HttpClient) {
   return new TranslateHttpLoader(http, 'assets/i18n/', '.json');
@@ -31,6 +31,7 @@ registerLocaleData(zh);
     NgZorroAntdModule,
     ReactiveFormsModule,
     ModalModule.forRoot(),
+    SortablejsModule.forRoot({}),
     TranslateModule.forRoot({
       loader: {
         provide: TranslateLoader,
@@ -47,7 +48,8 @@ registerLocaleData(zh);
     NgZorroAntdModule,
     ReactiveFormsModule,
     TranslateModule,
-    ModalModule
+    ModalModule,
+    SortablejsModule
   ],
   providers: [
     { provide: NZ_I18N, useValue: zh_CN },

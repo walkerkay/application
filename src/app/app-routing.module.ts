@@ -2,7 +2,7 @@ import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { LoginComponent } from './login/login.component';
 import { MessageComponent, MessageChatComponent } from './message';
-import { ProjectComponent, ProjectDetailComponent, ProjectAddonComponent } from './project';
+import { ProjectComponent, ProjectDetailComponent, ProjectAddonComponent, ProjectTaskDesignerComponent } from './project';
 import { ProjectResolver } from './project/services/project-resolver';
 import { AppRootResolver } from './services/app-root-resolver';
 
@@ -37,6 +37,10 @@ const routes: Routes = [
     },
     children: [
       {
+        path: 'designer',
+        component: ProjectTaskDesignerComponent,
+      },
+      {
         path: ':pid',
         component: ProjectDetailComponent,
         children: [
@@ -47,7 +51,7 @@ const routes: Routes = [
         ]
       }
     ]
-  },
+  }
 ];
 
 @NgModule({
