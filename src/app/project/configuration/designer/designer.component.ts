@@ -3,7 +3,7 @@ import { ProjectService } from '../../services/project.service';
 import { TaskInfo } from '../../entity/task-info';
 import { TaskService } from '../../services/task.service';
 import { TaskDesignerService } from './designer.services';
-import { SortablejsOptions } from '../../../../../node_modules/angular-sortablejs/dist';
+import { SortablejsOptions } from 'angular-sortablejs/dist';
 
 @Component({
   selector: 'app-project-task-designer',

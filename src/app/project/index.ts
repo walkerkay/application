@@ -8,6 +8,8 @@ import { ProjectTaskDetailComponent } from './task/detail/task-detail.component'
 import { TaskService } from './services/task.service';
 import { ProjectTaskDesignerComponent } from './configuration/designer/designer.component';
 import { TaskDesignerService } from './configuration/designer/designer.services';
+import { TASK_FIELD_COMPONENTS, TASK_FIELD_ENTITY_COMPONENTS } from './configuration/designer/field';
+
 
 export {
     ProjectComponent,
@@ -27,14 +29,16 @@ export const COMPONENTS = [
     ProjectAddonIterationComponent,
     ProjectAddonComponent,
     ProjectTaskDetailComponent,
-    ProjectTaskDesignerComponent
+    ProjectTaskDesignerComponent,
+    ...TASK_FIELD_COMPONENTS
 ];
 
 
 export const ENTITY_COMPONENTS = [
     ProjectAddonWaitingComponent,
     ProjectAddonIterationComponent,
-    ProjectTaskDetailComponent
+    ProjectTaskDetailComponent,
+    ...TASK_FIELD_ENTITY_COMPONENTS
 ];
 
 export const PROVIDERS = [

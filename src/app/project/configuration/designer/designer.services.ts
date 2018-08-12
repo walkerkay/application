@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { Observable, of, BehaviorSubject } from '../../../../../node_modules/rxjs';
+import { Observable, of, BehaviorSubject } from 'rxjs';
 import { ResponseData } from '../../../../shared/entity/response-data';
 import { map, tap } from 'rxjs/operators';
 
