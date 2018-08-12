@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { Route } from '../../node_modules/@angular/compiler/src/core';
+import { Router } from '../../node_modules/@angular/router';
 
 @Component({
   selector: 'app-root',
@@ -6,6 +8,10 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  title = 'app';
-  isCollapsed: boolean;
+
+  constructor(
+    public router: Router
+  ) {
+  }
+
 }
