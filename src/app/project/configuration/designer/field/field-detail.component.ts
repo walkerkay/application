@@ -1,5 +1,7 @@
-import { Component, OnInit, ViewContainerRef, ComponentFactoryResolver, Input,
-  Output, EventEmitter, OnChanges, forwardRef, SimpleChanges } from '@angular/core';
+import {
+  Component, OnInit, ViewContainerRef, ComponentFactoryResolver, Input,
+  Output, EventEmitter, OnChanges, forwardRef, SimpleChanges
+} from '@angular/core';
 import { FormGroup } from '@angular/forms';
 import { projectConstant } from '../../../project.constant';
 import { FormFieldInputDetailComponent } from './item/input/input-detail.component';
@@ -36,7 +38,7 @@ export class FormFieldDetailComponent implements OnInit {
     private componentFactoryResolver: ComponentFactoryResolver
   ) {
   }
-  
+
 
   emitValueChange(value: any) {
     this.field = value;

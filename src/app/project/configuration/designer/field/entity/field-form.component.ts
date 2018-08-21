@@ -1,5 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { FormGroup } from '@angular/forms';
+import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 
 import { FieldBase } from './field-base';
 import { FieldControlService } from './field-control.service';
@@ -15,10 +15,18 @@ export class FieldFormComponent implements OnInit {
 
   form: FormGroup;
 
-  constructor(private fieldControlService: FieldControlService) { }
+  constructor(
+    private fieldControlService: FieldControlService,
+    private fb: FormBuilder
+  ) {
+
+  }
 
   ngOnInit() {
-    this.form = this.fieldControlService.toFormGroup(this.fields);
+    this.form = this.fb.group({
+      text: ['', [Validators.required, Validators.minLength(3)]]
+    });
+    // this.form = this.fieldControlService.toFormGroup(this.fields);
   }
 
   onSubmit() {
