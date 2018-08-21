@@ -1,0 +1,17 @@
+<form nz-form [nzLayout]="vertical" (ngSubmit)="onSubmit()" [formGroup]="form">
+    <app-form-field-detail *ngFor="let field of fields" [field]="field" [form]="form"></app-form-field-detail>
+    <!-- <div class="form-row">
+    <button type="submit" [disabled]="!form.valid">Save</button>
+  </div> -->
+
+    <nz-form-item>
+        <nz-form-control [nzSpan]="isHorizontal? 14:null" [nzOffset]="isHorizontal? 4:null">
+            <button nz-button type="submit" nzType="primary" [nzSize]="'large'">提交</button>
+        </nz-form-control>
+    </nz-form-item>
+</form>
+<!-- 
+  <div>
+    {{form.invalid}}
+  </div> 
+-->

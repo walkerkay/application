@@ -9,6 +9,10 @@ import { TaskFieldSelectComponent } from './item/select/select.component';
 import { TaskFieldRadioComponent } from './item/radio/radio.component';
 import { TaskFieldMemberComponent } from './item/member/member.component';
 import { TaskFieldMembersComponent } from './item/members/members.component';
+import { FieldFormComponent } from './entity/field-form.component';
+import { FormFieldInputDetailComponent } from './item/input/input-detail.component';
+import { FormFieldDetailComponent } from './field-detail.component';
+
 
 export const TASK_FIELD_COMPONENTS = [
     TaskFieldComponent,
@@ -20,7 +24,11 @@ export const TASK_FIELD_COMPONENTS = [
     TaskFieldSelectComponent,
     TaskFieldRadioComponent,
     TaskFieldMemberComponent,
-    TaskFieldMembersComponent
+    TaskFieldMembersComponent,
+    FieldFormComponent,
+    FormFieldDetailComponent,
+    FormFieldInputDetailComponent
+
 ];
 
 
@@ -34,5 +42,8 @@ export const TASK_FIELD_ENTITY_COMPONENTS = [
     TaskFieldSelectComponent,
     TaskFieldRadioComponent,
     TaskFieldMemberComponent,
-    TaskFieldMembersComponent
+    TaskFieldMembersComponent,
+    FieldFormComponent,
+    FormFieldDetailComponent,
+    FormFieldInputDetailComponent
 ];

@@ -9,6 +9,7 @@ import { TaskService } from './services/task.service';
 import { ProjectTaskDesignerComponent } from './configuration/designer/designer.component';
 import { TaskDesignerService } from './configuration/designer/designer.services';
 import { TASK_FIELD_COMPONENTS, TASK_FIELD_ENTITY_COMPONENTS } from './configuration/designer/field';
+import { FieldControlService } from './configuration/designer/field/entity/field-control.service';
 
 
 export {
@@ -44,5 +45,6 @@ export const ENTITY_COMPONENTS = [
 export const PROVIDERS = [
     ProjectService,
     TaskService,
-    TaskDesignerService
+    TaskDesignerService,
+    FieldControlService
 ];

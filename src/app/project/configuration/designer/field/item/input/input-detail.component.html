@@ -1,0 +1,11 @@
+<div nz-row>
+    <div nz-col>
+        <nz-form-item>
+            <nz-form-label [nzRequired]="field.required"> {{field.label}}</nz-form-label>
+            <nz-form-control>
+                <input nz-input [(ngModel)]="field.value" [placeholder]="field.placeHolder || ''" [required]="field.required" name="text" />
+                <nz-form-extra *ngIf="field.helpText">{{field.helpText}}</nz-form-extra>
+            </nz-form-control>
+        </nz-form-item>
+    </div>
+</div>

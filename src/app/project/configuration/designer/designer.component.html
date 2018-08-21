@@ -1,5 +1,8 @@
 <div class="task-designer-body">
     <div class="task-designer-fields">
+
+        <app-field-form [fields]="fieldItems"></app-field-form>
+
         <div class="field-title">可选控件</div>
         <ul class="field-list" [sortablejs]="fields" [sortablejsOptions]="fieldSortOptions" [sortablejsCloneFunction]="cloneFieldItem">
             <li class=field-item *ngFor="let item of fields;">{{item.name}}</li>
